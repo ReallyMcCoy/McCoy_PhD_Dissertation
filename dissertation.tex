@@ -1,0 +1,83 @@
+%!TEX TS-program = xelatex 
+%!TEX encoding = UTF-8 Unicode
+
+% Modify the following line to match your school
+% Available options include `Harvard`, `Princeton`, and `NYU`.
+\documentclass[School=Harvard]{Dissertate}
+\usepackage[final]{pdfpages}
+\begin{document}
+
+% the front matter
+\input{frontmatter/personalize}
+\maketitle
+% to change copyright year go into Harvard package style.sty
+\copyrightpage
+\abstractpage
+\tableofcontents
+\authorlist
+%\listoffigures
+\dedicationpage
+\acknowledgments
+
+\doublespacing
+
+
+
+% include each chapter...
+\setcounter{chapter}{-1}  % start chapter numbering at 0
+\include{chapters/introduction}
+
+\include{chapters/chapter1}
+\includepdf[pages=-,width=7.5in,,pagecommand={}]{Super_Black_Birds_of_Paradise_NComms_2018}
+
+\setcounter{chapter}{1}
+\include{chapters/chapter2}
+% for PDF with max width
+%\includepdf[pages=-,pagecommand={},width=7in]{Super_Black_Peacock_Spiders_ProcB_2019}
+% for PDF with no max width
+\includepdf[pages=-,width=7.5in,pagecommand={}]{Super_Black_Peacock_Spiders_ProcB_2019}
+
+\setcounter{chapter}{2}
+\include{chapters/chapter3}
+\includepdf[pages=1-13,width=7.5in,pagecommand={}]{Super_Black_Birds_Convergent_Evolution_JEB_2019}
+
+\setcounter{chapter}{3}
+\include{chapters/chapter4}
+\includepdf[pages=-,width=7.5in,pagecommand={}]{Tanager_Carotenoid_Plumage_Scientific_Reports_2021}
+
+\setcounter{chapter}{4}
+\include{chapters/chapter5}
+\includepdf[pages=-,width=7.5in,pagecommand={}]{Mate_Choice_Embryo_Selection_TREE_2020}
+
+\setcounter{chapter}{5}
+\include{chapters/chapter6}
+\includepdf[pages=-,width=7.5in,pagecommand={}]{Callitrichine_Demographics_Am_J_Primatology_2019}
+
+\setcounter{chapter}{6}
+\include{chapters/chapter7}
+\includepdf[pages=-,width=7.5in,pagecommand={}]{New_Caledonian_Crows_Optimistic_Tool_Use_Current_Biology_2019}
+
+%\setcounter{chapter}{7}
+%\include{chapters/conclusion}
+
+% later think about margin fig
+% https://stackoverflow.com/questions/2170819/margin-figures-in-latex
+
+%\begin{appendices}
+%    \include{chapters/appendixA}
+%\end{appendices}
+
+\singlespacing
+
+% the back matter
+\clearpage
+\bibliography{references}
+% attempt to sort references properly
+\bibliographystyle{unsrtnat}
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{apalike2}
+%\bibliographystyle{plain}
+
+\include{endmatter/colophon}
+
+\end{document}
